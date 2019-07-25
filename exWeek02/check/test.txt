@@ -1,0 +1,2 @@
+So, I began thinking of examples that showed why this was a powerful pattern.
+The context of out problem is a shipping warehouse. Items are sent from the shelves to a conveyor belt. An employee packs the items and places them on an outbound conveyor belt to be shipped

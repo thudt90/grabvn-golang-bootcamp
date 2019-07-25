@@ -1,0 +1,2 @@
+and that some items may require extra handling to package than others
+It’s important here to note that we’ll have one item per box
