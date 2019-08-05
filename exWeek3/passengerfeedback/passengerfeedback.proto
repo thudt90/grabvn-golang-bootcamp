@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package passengerfeedback;
+
+service PassengerFeedbackService{
+  rpc AddPassengerFeedback(PassengerFeedback) returns (AddPassengerFeedbackResult) {};
+  rpc GetPassengerFeedbackByBookingCode(GetPassengerFeedbackRequest) returns (GetPassengerFeedbackCodeResponse) {};
+  rpc GetPassengerFeedbackByPassengerId(GetPassengerFeedbackRequest) returns (GetPassengerFeedbackIDResponse) {};
+  rpc DeletePassengerFeedbackPassengerId(DeletePassengerFeedbackRequest) returns (DeletePassengerFeedbackResponse) {};
+}
+
+message ResponseCode {
+  int32 code = 1;
+  string message = 2;
+}
+
+message PassengerFeedback{
+    string bookingCode = 1;
+    int32 passengerID = 2;
+    string feedback = 3;
+}
+
+
+message AddPassengerFeedbackResult {
+    ResponseCode responseCode = 1;
+}
+
+message GetPassengerFeedbackRequest{
+    string bookingCode = 1;
+    int32 passengerID = 2;
+}
+
+message GetPassengerFeedbackCodeResponse {
+    ResponseCode responseCode = 1;
+    PassengerFeedback passengerFeedback = 2;
+}
+
+message GetPassengerFeedbackIDResponse {
+    ResponseCode responseCode = 1;
+    repeated PassengerFeedback passengerFeedbacks = 2;
+}
+
+message DeletePassengerFeedbackRequest{
+    int32 passengerID = 1;
+}
+
+message DeletePassengerFeedbackResponse {
+    ResponseCode responseCode = 1;
+}
+
+
+
